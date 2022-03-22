@@ -6,23 +6,23 @@ import { useEffect } from "react"
 import teachers from "../../../utils/data/teachers"
 
 function ListaProfesores(){
-    // const dispatch = useDispatch()
-    // const teacher = useSelector(selectTeacher)
-    // // const { status } = useSelector(selectGetLessonsByTeacherIdState)
-    // // const { id: teacherId } = teacher._id
-    // console.log(teacher)
+    const dispatch = useDispatch()
+    const teacher = useSelector(selectTeacher)
+    const { status } = useSelector(selectGetLessonsByTeacherIdState)
+    const { id: teacherId } = teacher._id
+    console.log(teacher)
 
-    // useEffect(() => {
-    //     dispatch(findTeacher(teacherId));
-    // }, [dispatch, teacherId]);
+    useEffect(() => {
+        dispatch(findTeacher(teacherId));
+    }, [dispatch, teacherId]);
 
-    // useEffect(() => {
-    //     if (status === 'Failed') {
-    //         setTimeout(() => {
-    //             dispatch(resetTeacherMethodsMessage('getLessonsByTeacherIdState)'));
-    //         }, 3000);
-    //     }
-    // }, [dispatch, status]);
+    useEffect(() => {
+        if (status === 'Failed') {
+            setTimeout(() => {
+                dispatch(resetTeacherMethodsMessage('getLessonsByTeacherIdState)'));
+            }, 3000);
+        }
+    }, [dispatch, status]);
     
     return(
         <div className="container_list_teacher">
