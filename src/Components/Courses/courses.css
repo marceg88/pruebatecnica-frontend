@@ -1,0 +1,17 @@
+.view_courses{
+    display: flex;
+    width: 80%;
+}
+
+.register_courses{
+    display: flex;
+    width: 400px;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+.list_courses{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}

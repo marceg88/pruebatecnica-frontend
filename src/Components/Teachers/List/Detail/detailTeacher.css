@@ -1,0 +1,23 @@
+.detail_teacher{
+    display: flex;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: 200px;
+    flex-direction: column;
+}
+
+.list_lessons{
+    display: flex; 
+}
+
+.button_detail{
+    display: flex;
+    flex-direction: column;
+}
+
+.button1{
+    margin: 10px
+}
+.button2{
+    margin: 10px
+}

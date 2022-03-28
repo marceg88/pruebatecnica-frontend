@@ -6,7 +6,28 @@ const teachers = [
         dateBirth: "03/25/1988",
         currency: "COP",
         price: "2000",
-        role: "planta"
+        role: "planta",
+        lecciones: [
+            {
+                id: 1,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 2
+            },
+            {
+                id: 2,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 1
+            },
+            {
+                id: 3,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 3
+            }
+        ],
+        total: 0
     },
     {
         id: 2,
@@ -15,7 +36,28 @@ const teachers = [
         dateBirth: "03/25/1988",
         currency: "COP",
         price: "2000",
-        role: "planta"
+        role: "planta",
+        lecciones: [
+            {
+                id: 1,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 2
+            },
+            {
+                id: 2,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 1
+            },
+            {
+                id: 3,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 3
+            }
+        ],
+        total:0
     },
     {
         id: 3,
@@ -24,7 +66,22 @@ const teachers = [
         dateBirth: "03/25/1988",
         currency: "COP",
         price: "2000",
-        role: "extranjero"
+        role: "extranjero",
+        lecciones: [
+            {
+                id: 1,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 2
+            },
+            {
+                id: 2,
+                nameCourse: "ISS557",
+                dateCourse: "20/02/2022",
+                hours: 1
+            }
+        ],
+        total: 0
     }
 ]
 

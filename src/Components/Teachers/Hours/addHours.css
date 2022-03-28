@@ -1,0 +1,7 @@
+.container_add_hours{
+    display: flex;
+    width: 50%;
+    margin-left: 300px;
+    margin-top: 40px;
+    flex-direction: column;
+}

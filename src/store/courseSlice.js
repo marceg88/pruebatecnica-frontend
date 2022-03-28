@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { ReactAPI } from "../../services/conectionAPI";
+import { ReactAPI } from "../services/conectionAPI";
 
 export const registerCourse = createAsyncThunk(
     "course/registerCourse",

@@ -1,16 +1,19 @@
 import { Card } from "antd"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { selectTeacher } from "../../../store/teacherSlice"
 
-function CardTeacher( teacher ){
-    const { id, name, numberId, dateBirth } = teacher
+
+function CardTeacher( { _id, name, numberId, role } ){
+   
     return(
         <Card 
             title={name} 
-            extra={<a href={`/${id}/detalles`}>Detalles</a>} 
-            style={{ width: 800, marginLeft: 300 }}
+            extra={<a href={`/profesores/lista/${_id}`}>Detalles</a>} 
+            style={{ width: 500 }}
         >
-            <p>{numberId}</p>
-            <p>{dateBirth}</p>
-            <p>Card content</p>
+            <p>Numero de cedula: {numberId}</p>
+            <p>Fecha de nacimiento: {role}</p>
         </Card>
     )
 }

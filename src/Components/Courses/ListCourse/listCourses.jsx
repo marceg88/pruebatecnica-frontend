@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectCourse } from "../../../store/courseSlice/course.slice";
+import { selectCourse } from "../../../store/courseSlice";
 
 
 import CardCourse from "./cardCourses";

@@ -17,6 +17,7 @@ function Navbar(){
                 <Menu.Item key="1"><Link to="/">INICIO</Link></Menu.Item>
                 <Menu.Item key="2"><Link to="/profesores">PROFESORES</Link></Menu.Item>
                 <Menu.Item key="3"><Link to="/cursos">CURSOS</Link></Menu.Item>
+                <Menu.Item key="4"><Link to="/nomina">NOMINA</Link></Menu.Item>
             </Menu>
             </Header>
     </Layout>

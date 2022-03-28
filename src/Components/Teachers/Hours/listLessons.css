@@ -1,0 +1,13 @@
+.list_lessons{
+    display: flex;
+    margin-top: 40px;
+    width: 70%;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.button_regresar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

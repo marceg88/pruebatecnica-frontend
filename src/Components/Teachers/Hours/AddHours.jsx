@@ -1,46 +1,53 @@
 import { Form, Select, Button, InputNumber, DatePicker } from "antd"
 import { useDispatch, useSelector } from "react-redux"
-import { courses } from "../Courses/ListCourse/listCourses"
+import { courses } from "../../Courses/ListCourse/listCourses"
 import { useEffect } from "react"
-import { Link } from "react-router-dom"
-
-import { registerLessons, selectRegisterLessonsState, resetLessonsMethodsMessage } from "../../store/lessonsSlice/lessonsSlice"
-import { selectTeacher } from "../../store/teacherSlice/teacherSlice"
+import { Link, useNavigate, useParams } from "react-router-dom"
+import moment from "moment"
+import { registerLessons, selectRegisterLessonsState, resetLessonsMethodsMessage, selectLessons, findLessonsByCourse, findLessonsByOwner } from "../../../store/lessonsSlice"
+import { findTeacher, selectTeacher } from "../../../store/teacherSlice"
+import "./addHours.css"
 
 function AddHours(){
     const dispatch = useDispatch()
-    // const teacher = useSelector(selectTeacher)
-    // const { id: owner } = useSelector(selectTeacher)
-    // const { status } = useSelector(selectRegisterLessonsState)
-    // console.log(courses)
+    const navigate = useNavigate()
+    const teacher = useSelector(selectTeacher)
+    const lessons = useSelector(selectLessons)
+    const { id } = useParams()
+    const owner = id
+    const { price } = teacher
+    const {message, status} = useSelector(selectRegisterLessonsState)
+
+    console.log(teacher)
     const onFinish = (values) => {
+        const mounth = moment(values.dateCourse).format("MM")
+        const total = price*values.hours
         const data = {
             ...values,
-            
+            mounth: mounth,
+            owner,
+            total
         }
-        console.log(data)
+        console.log("data",data)
         dispatch(registerLessons(data))
+        navigate(`/lecciones/lista/${id}`)
     }
-
-    // useEffect(() => {
-    //     if(status === "OK") {
-    //         setTimeout(() => {
-    //             dispatch(resetLessonsMethodsMessage("registerLessonsState"))
-    //             // navigate("/profesores/lista")
-    //         }, 3500)
-    //     }
-    // }, [dispatch, status])
-
+    useEffect(() => {
+        dispatch(findTeacher(owner))
+    }, [])
+    useEffect(() => {
+        if(status === "OK") {
+            setTimeout(() => {
+                dispatch(resetLessonsMethodsMessage("registerLessonsState"))
+                
+            }, 3500)
+        }
+    }, [dispatch, status, navigate])
+    
     return(
-        <Form
-            className="container_add_hours"
-            labelCol={{
-                span: 8,
-            }}
-            wrapperCol={{
-                span: 8,
-            }}
-            layout="horizontal"
+        <div className="container_add_hours">
+            <Form
+            layout="vertical"
             onFinish={onFinish}
         >
             <Form.Item 
@@ -81,15 +88,14 @@ function AddHours(){
             >
             <InputNumber />
             </Form.Item>
-            <Form.Item
-                wrapperCol={{
-                    offset: 14
-                }}
-            >
+            <p>{message}</p>
+            <Form.Item>
                 <Button type="primary" htmlType="submit">REGISTRAR</Button>
-                <Link to="/profesores/lista">   Regresar a la lista</Link>
+                <Button type="primary" onClick={() => navigate(`/lecciones/lista/${owner}`)}>REGRESAR</Button>
             </Form.Item>
         </Form>
+        </div>
+        
     )
 }
 

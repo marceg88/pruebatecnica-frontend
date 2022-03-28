@@ -6,7 +6,7 @@ function CardCourse( cour ){
         <Card 
             title={nameCourse} 
             extra={<a href="#">Editar</a>} 
-            style={{ width: 800, marginLeft: 300 }}
+            style={{ width: 400 }}
         >
             <p>Este curso es ...</p>
         </Card>

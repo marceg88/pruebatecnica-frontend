@@ -1,0 +1,12 @@
+.container_list_teacher{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 40px;
+}
+
+.list_teacher_button{
+    display: flex;
+    justify-content: space-between;
+}
